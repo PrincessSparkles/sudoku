@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# out-of-tree build directories
+build
