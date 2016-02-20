@@ -17,7 +17,9 @@
 
 int main(int argc, char *argv[])
 {
-    Sudoku::Solve();
+    Sudoku::Puzzle puzzle;
+    
+    Sudoku::Puzzle solution = Sudoku::Solve(puzzle);
 
     return 0;
 }
