@@ -10,7 +10,9 @@
 {
     "version": "0.1.0",
     "command": "make",
-	"args": [ "--directory=${workspaceRoot}/build" ],
+	"options": {
+		"cwd": "${workspaceRoot}/build"
+	},
     "isShellCommand": true,
     "tasks": [
         {
@@ -18,13 +20,13 @@
             // Make this the default build command.
             "isBuildCommand": true,
             // Show the output window only if unrecognized errors occur.
-            "showOutput": "always",
+            "showOutput": "silent",
             // No args
             "args": ["all"],
             // Use the standard less compilation problem matcher.
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceRoot}"],
+                "fileLocation": "absolute",
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,
