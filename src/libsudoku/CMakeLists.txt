@@ -34,3 +34,20 @@ export(TARGETS sudoku FILE LibSudokuConfig.cmake)
 
 ###############################################################################
 
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIR})
+include_directories(src)
+        
+# Every library has unit tests, of course
+add_executable(testlibsudoku
+    test/main.cpp)
+
+target_link_libraries(testlibsudoku
+    ${GTEST_LIBRARIES}
+    ${GTEST_MAIN_LIBRARIES}
+    gmock
+    gmock_main
+    pthread
+    sudoku)
+
+add_test(testlibsudoku testlibsudoku)
