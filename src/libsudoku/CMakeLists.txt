@@ -11,6 +11,7 @@
 project(libsudoku VERSION 0.1 LANGUAGES CXX)
 
 Include(CodeCoverage)
+Include(DoxygenTargets)
 
 add_library(sudoku
     src/puzzle.cpp
@@ -34,6 +35,10 @@ target_compile_features(sudoku
 
 # This makes the project importable from the build directory
 export(TARGETS sudoku FILE LibSudokuConfig.cmake)
+
+add_doxygen(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../docs
+    DOC_TARGET docs)
 
 ###############################################################################
 
