@@ -14,6 +14,9 @@ set (CMAKE_CXX_STANDARD 14)
 project(sudoku VERSION 0.1 LANGUAGES CXX)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
+# setup the flags for code coverage
+# TODO: Only do this for 'debug'
+SET(CMAKE_CXX_FLAGS "-g -O0 --coverage")
 
 enable_testing()
 

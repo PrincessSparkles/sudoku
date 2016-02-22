@@ -10,6 +10,8 @@
 # Define library. Only source files here!
 project(libsudoku VERSION 0.1 LANGUAGES CXX)
 
+Include(CodeCoverage)
+
 add_library(sudoku
     src/puzzle.cpp
     src/sudoku.cpp)
@@ -53,3 +55,9 @@ target_link_libraries(testlibsudoku
     sudoku)
 
 add_test(testlibsudoku testlibsudoku)
+
+SETUP_TARGET_FOR_COVERAGE(
+    lcovlibsudoku   # target name
+    testlibsudoku   # test program
+    coverage        # where to put the results
+)
