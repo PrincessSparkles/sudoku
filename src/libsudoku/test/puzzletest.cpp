@@ -68,9 +68,9 @@ TEST_F(PuzzleTest, BlankGridIsZeroed)
 {
     Puzzle puzzle;
 
-    for (int y = 0; y < Sudoku::PuzzleHeight; y++)
+    for (auto y = 0; y < Sudoku::PuzzleHeight; y++)
     {
-        for (int x = 0; x < Sudoku::PuzzleWidth; x++)
+        for (auto x = 0; x < Sudoku::PuzzleWidth; x++)
         {
             ASSERT_EQ(0, puzzle.Cell(x, y)) << "(" << x << ", " << y << ")";
         }
