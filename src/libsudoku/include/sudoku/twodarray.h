@@ -23,7 +23,7 @@ class TwoDArray
 public:
 
     TwoDArray() = default;    
-    ~TwoDArray() = default;
+    virtual ~TwoDArray() = default;
     
     T &Cell(size_t x, size_t y)
     {
