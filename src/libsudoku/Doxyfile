@@ -1,0 +1,12 @@
+
+PROJECT_NAME  = libsudoku
+INPUT         = src include
+FILE_PATTERNS = *.cpp *.h
+INCLUDE_PATH  = include
+RECURSIVE     = YES
+
+EXTRACT_PRIVATE      = YES
+EXTRACT_STATIC       = YES
+EXTRACT_ANON_NSPACES = YES
+
+WARN_NO_PARAMDOC = YES

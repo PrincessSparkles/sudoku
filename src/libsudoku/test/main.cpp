@@ -1,14 +1,14 @@
 /*
  * main.cpp
  *
- * This file contains the main for the Sudoku solver application
+ * main entry point for the sudoku unit test program
  *
- * (c) 2016 Richard Oak
+ * (c) Richard Oak 2016
  */
  
 /* ************************************************************************* */
 
-#include "sudoku/sudoku.h"
+#include <gmock/gmock.h>
 
 /* ************************************************************************* */
 
@@ -17,14 +17,10 @@
 
 int main(int argc, char *argv[])
 {
-    Sudoku::Puzzle puzzle;
-    
-    Sudoku::Puzzle solution = Sudoku::Solve(puzzle);
-
-    return 0;
+  ::testing::InitGoogleMock(&argc, argv);
+  return RUN_ALL_TESTS();
 }
 
 /* ************************************************************************* */
 /* ************************************************************************* */
 /* ************************************************************************* */
- 

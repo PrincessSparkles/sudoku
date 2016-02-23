@@ -10,7 +10,11 @@
 # Define library. Only source files here!
 project(libsudoku VERSION 0.1 LANGUAGES CXX)
 
+Include(CodeCoverage)
+Include(DoxygenTargets)
+
 add_library(sudoku
+    src/puzzle.cpp
     src/sudoku.cpp)
 
 set_property(TARGET sudoku PROPERTY CXX_STANDARD 14)
@@ -32,5 +36,33 @@ target_compile_features(sudoku
 # This makes the project importable from the build directory
 export(TARGETS sudoku FILE LibSudokuConfig.cmake)
 
+add_doxygen(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../docs
+    DOC_TARGET docs)
+
 ###############################################################################
 
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIR})
+include_directories(src)
+        
+# Every library has unit tests, of course
+add_executable(testlibsudoku
+    test/puzzletest.cpp
+    test/main.cpp)
+
+target_link_libraries(testlibsudoku
+    ${GTEST_LIBRARIES}
+    ${GTEST_MAIN_LIBRARIES}
+    gmock
+    gmock_main
+    pthread
+    sudoku)
+
+add_test(testlibsudoku testlibsudoku)
+
+SETUP_TARGET_FOR_COVERAGE(
+    lcovlibsudoku   # target name
+    testlibsudoku   # test program
+    coverage        # where to put the results
+)

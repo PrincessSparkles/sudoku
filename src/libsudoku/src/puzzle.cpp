@@ -1,30 +1,35 @@
 /*
- * main.cpp
+ * puzzle.cpp
  *
- * This file contains the main for the Sudoku solver application
+ * Class implementation for the Sudoku Puzzle class
  *
- * (c) 2016 Richard Oak
+ * (c) Richard Oak 2016
  */
  
 /* ************************************************************************* */
 
-#include "sudoku/sudoku.h"
+#include "sudoku/puzzle.h"
 
 /* ************************************************************************* */
 
+using Sudoku::Puzzle;
+using Sudoku::PuzzleWidth;
+using Sudoku::PuzzleHeight;
+
 /* ************************************************************************* */
 /* ************************************************************************* */
 
-int main(int argc, char *argv[])
+Puzzle::Puzzle()
 {
-    Sudoku::Puzzle puzzle;
-    
-    Sudoku::Puzzle solution = Sudoku::Solve(puzzle);
-
-    return 0;
+    for (int y = 0; y < PuzzleHeight; y++)
+    {
+        for (int x = 0; x < PuzzleWidth; x++)
+        {
+            Cell(x, y) = 0;
+        }
+    }    
 }
 
 /* ************************************************************************* */
 /* ************************************************************************* */
 /* ************************************************************************* */
- 
