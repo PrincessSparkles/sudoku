@@ -52,12 +52,24 @@ public:
     /// Initialise a digit to the given value
     /// </summary>
     /// <param name="value">The initial value for the digit</param>
-    PuzzleDigit(PuzzleDigitType value)
+    explicit PuzzleDigit(PuzzleDigitType value)
     {
         Assign(value);
     }
     
     ~PuzzleDigit() = default;
+    
+    /// <summary>
+    /// Assign `this` the given value
+    /// </summary>
+    /// <param name="value">The value to assign</param>
+    /// <returns>reference to `this`</returns>
+    PuzzleDigit &operator =(const PuzzleDigitType &value)
+    {
+        Assign(value);
+        
+        return *this;
+    }
     
     /// <summary>
     /// Get the value of this digit
