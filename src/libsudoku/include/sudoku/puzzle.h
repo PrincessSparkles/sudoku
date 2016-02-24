@@ -10,16 +10,15 @@
 
 #pragma once
 
-#include <cstdint>    // for uint8_t
+#include <cstdint>  // for uint8_t
 
-#include "twodarray.h"  // TwoDArray
+#include "twodarray.h"      // TwoDArray
+#include "puzzledigit.h"    // PuzzleDigit
 
 namespace Sudoku
 {
 
 /* ************************************************************************* */
-
-using PuzzleDigit = std::uint8_t;
 
 /// <summary>
 /// The width of a sudoku puzzle
@@ -57,7 +56,7 @@ public:
     /// <remarks>
     /// The Puzzle is initially set to blank
     /// </remarks>
-    Puzzle();
+    Puzzle() = default;
     ~Puzzle() = default;
 
 protected:

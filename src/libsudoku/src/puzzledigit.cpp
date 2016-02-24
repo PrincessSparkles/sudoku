@@ -1,20 +1,24 @@
 /*
- * puzzle.cpp
+ * puzzledigit.cpp
  *
- * Class implementation for the Sudoku Puzzle class
+ * Class implementation for the Sudoku PuzzleDigit class
  *
  * (c) Richard Oak 2016
  */
  
 /* ************************************************************************* */
 
-#include "sudoku/puzzle.h"
+#include "sudoku/puzzledigit.h"
 
 /* ************************************************************************* */
 
-using Sudoku::Puzzle;
-using Sudoku::PuzzleWidth;
-using Sudoku::PuzzleHeight;
+/* ************************************************************************* */
+/* ************************************************************************* */
+
+bool Sudoku::operator ==(const PuzzleDigitType &value, const PuzzleDigit &digit)
+{
+    return value == digit.get();
+}
 
 /* ************************************************************************* */
 /* ************************************************************************* */
