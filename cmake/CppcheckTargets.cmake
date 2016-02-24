@@ -160,7 +160,7 @@ function(add_cppcheck _name)
 				${CPPCHECK_WARN_REGULAR_EXPRESSION})
 			list(REMOVE_AT _input ${_unused_func})
 		endif()
-
+        
 		get_target_property(_cppcheck_sources "${_name}" SOURCES)
 		set(_files)
 		foreach(_source ${_cppcheck_sources})
@@ -171,7 +171,16 @@ function(add_cppcheck _name)
 			endif()
 		endforeach()
 
-		if("1.${CMAKE_VERSION}" VERSION_LESS "1.2.8.0")
+        # hack for running cppcheck correctly:
+        list(APPEND _cppcheck_args "--std=c++11")
+        list(APPEND _cppcheck_args "--suppress=missingIncludeSystem")
+        list(APPEND _cppcheck_args "-I")
+        list(APPEND _cppcheck_args "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+        # include the main.cpp to prevent entry point functions being unused
+        list(APPEND _files "${CMAKE_CURRENT_SOURCE_DIR}/../sudoku/src/main.cpp")
+
+ 		if("1.${CMAKE_VERSION}" VERSION_LESS "1.2.8.0")
 			# Older than CMake 2.8.0
 			add_test(${_name}_cppcheck_test
 				"${CPPCHECK_EXECUTABLE}"
