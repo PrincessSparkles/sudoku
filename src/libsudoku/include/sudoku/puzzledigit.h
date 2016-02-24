@@ -24,14 +24,34 @@ static const int MaxDigit = 9;
 
 /* ************************************************************************* */
 
+/// <summary>
+/// Class representing legal values in the Puzzle grid
+/// </summary>
+/// <remarks>
+/// A value of zero indicates that the cell is blank (i.e. unsolved)
+/// </remarks>
+/// <remarks>
+/// An attempt to assign or initialise a Digit with a value greater than MaxDigit
+/// will result in a DigitOutOfRange exception being thrown
+/// </remarks>
 class PuzzleDigit
 {
 public:
+    /// <summary>
+    /// Default constructor
+    /// </summary>
+    /// <remarks>
+    /// Initialises the value to zero
+    /// </remarks>
     PuzzleDigit() :
         PuzzleDigit(0)
     {
     }
     
+    /// <summary>
+    /// Initialise a digit to the given value
+    /// </summary>
+    /// <param name="value">The initial value for the digit</param>
     PuzzleDigit(PuzzleDigitType value)
     {
         Assign(value);
@@ -39,6 +59,10 @@ public:
     
     ~PuzzleDigit() = default;
     
+    /// <summary>
+    /// Get the value of this digit
+    /// </summary>
+    /// <returns>The value of this digit</returns>
     PuzzleDigitType get() const
     {
         return _value;
@@ -70,6 +94,15 @@ protected:
 
 private:
 
+    /// <summary>
+    /// Assign `this` the value <paramref name="value"/>
+    /// </summary>
+    /// <remarks>
+    /// This method performs the check to ensure that <paramref name="value"/> is
+    /// less than or equal to `MaxDigit`.
+    /// An exception of type DigitOutOfRange is thrown if not.
+    /// </remarks>
+    /// <param name="value">The value to assign</param>
     void Assign(PuzzleDigitType value)
     {
         if (value > MaxDigit)
@@ -80,6 +113,9 @@ private:
         _value = value;
     }
 
+    /// <summary>
+    /// The value of this digit
+    /// </summary>
     PuzzleDigitType _value;
 };
 
