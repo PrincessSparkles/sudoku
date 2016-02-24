@@ -10,8 +10,9 @@
 # Define library. Only source files here!
 project(libsudoku VERSION 0.1 LANGUAGES CXX)
 
-Include(CodeCoverage)
-Include(DoxygenTargets)
+include(CodeCoverage)
+include(DoxygenTargets)
+include(CppcheckTargets)
 
 add_library(sudoku
     src/puzzle.cpp
@@ -39,6 +40,12 @@ export(TARGETS sudoku FILE LibSudokuConfig.cmake)
 add_doxygen(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
     OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../docs
     DOC_TARGET docs)
+    
+add_cppcheck(sudoku 
+    UNUSED_FUNCTIONS
+    STYLE
+    POSSIBLE_ERROR
+    FAIL_ON_WARNINGS)
 
 ###############################################################################
 
