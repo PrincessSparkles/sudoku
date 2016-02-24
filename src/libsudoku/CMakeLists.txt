@@ -16,6 +16,7 @@ include(CppcheckTargets)
 
 add_library(sudoku
     src/puzzle.cpp
+    src/puzzledigit.cpp
     src/sudoku.cpp)
 
 set_property(TARGET sudoku PROPERTY CXX_STANDARD 14)
@@ -56,6 +57,7 @@ include_directories(src)
 # Every library has unit tests, of course
 add_executable(testlibsudoku
     test/puzzletest.cpp
+    test/puzzledigittest.cpp
     test/main.cpp)
 
 target_link_libraries(testlibsudoku
