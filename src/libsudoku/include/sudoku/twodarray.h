@@ -10,8 +10,8 @@
 
 #pragma once
 
-#include <array>
-#include <exception>
+#include <array>      // std::array
+#include <exception>  // std::exception
 
 namespace Sudoku
 {
