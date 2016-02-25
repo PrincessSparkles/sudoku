@@ -11,6 +11,7 @@
 #pragma once
 
 #include <array>
+#include <exception>
 
 namespace Sudoku
 {
