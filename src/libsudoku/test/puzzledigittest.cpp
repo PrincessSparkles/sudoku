@@ -57,7 +57,9 @@ TEST_F(PuzzleDigitTest, EqualityOperator)
 {
     PuzzleDigit digit(1);
 
-    ASSERT_EQ(1, digit);    
+    // make sure both variants of == work
+    ASSERT_TRUE(digit == 1);    
+    ASSERT_TRUE(1 == digit);    
 }
 
 /* ************************************************************************* */

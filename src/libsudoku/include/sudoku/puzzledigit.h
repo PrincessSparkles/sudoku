@@ -141,6 +141,14 @@ private:
 /// <returns>`value == digit._value`</returns>
 bool operator ==(const PuzzleDigitType &value, const PuzzleDigit &digit);
 
+/// <summary>
+/// Equality operator
+/// </summary>
+/// <param name="digit">digit to test</param>
+/// <param name="value">digit to test</param>
+/// <returns>`value == digit._value`</returns>
+bool operator ==(const PuzzleDigit &digit, const PuzzleDigitType &value);
+
 /* ************************************************************************* */
 
 }
