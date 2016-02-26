@@ -44,7 +44,23 @@ static const int SubGridHeight = 3;
 /// <remarks>
 /// A Cell with a value of 0 is considered blank.
 /// </remarks>
-using Puzzle = TwoDArray<PuzzleDigit, PuzzleWidth, PuzzleHeight>;
+class Puzzle : public TwoDArray<PuzzleDigit, PuzzleWidth, PuzzleHeight>
+{
+public:
+
+    /// <summary>
+    /// constructor
+    /// </summary>
+    /// <remarks>
+    /// The Puzzle is initially set to blank
+    /// </remarks>
+    Puzzle() = default;
+    ~Puzzle() = default;
+
+protected:
+
+private:
+};
 
 /* ************************************************************************* */
 
