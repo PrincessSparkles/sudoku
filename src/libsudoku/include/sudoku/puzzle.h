@@ -10,8 +10,6 @@
 
 #pragma once
 
-#include <cstdint>  // for uint8_t
-
 #include "twodarray.h"      // TwoDArray
 #include "puzzledigit.h"    // PuzzleDigit
 
