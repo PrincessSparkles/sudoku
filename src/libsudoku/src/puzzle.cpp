@@ -28,7 +28,7 @@ std::ostream &Sudoku::operator <<(std::ostream &stream, const Puzzle &puzzle)
 		{
 			PuzzleDigit digit = puzzle.Cell(x, y);
 			
-			if (0 == digit)
+			if (digit == 0)
 			{
 				stream << ".";
 			}
