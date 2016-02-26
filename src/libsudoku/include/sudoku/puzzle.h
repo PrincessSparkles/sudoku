@@ -48,4 +48,8 @@ using Puzzle = TwoDArray<PuzzleDigit, PuzzleWidth, PuzzleHeight>;
 
 /* ************************************************************************* */
 
+std::ostream &operator <<(std::ostream &os, const Puzzle &puzzle);
+
+/* ************************************************************************* */
+
 }

@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include <cstdint>      // std::uint8_t
+#include <cstdint>      // std::uint16_t
 #include <exception>    // std::exception
 
 namespace Sudoku
@@ -18,7 +18,7 @@ namespace Sudoku
 
 /* ************************************************************************* */
 
-using PuzzleDigitType = uint8_t;
+using PuzzleDigitType = uint16_t;
 
 static const int MaxDigit = 9;
 
