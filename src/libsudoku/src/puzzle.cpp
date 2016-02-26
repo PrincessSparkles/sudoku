@@ -34,7 +34,7 @@ std::ostream &Sudoku::operator <<(std::ostream &stream, const Puzzle &puzzle)
 			}
 			else
 			{
-				stream << digit.get();
+				stream << digit;
 			}
 		}
 		

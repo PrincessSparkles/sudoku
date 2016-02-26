@@ -8,6 +8,8 @@
  
 /* ************************************************************************* */
 
+#include <sstream>
+
 #include <gtest/gtest.h>
 
 #include "sudoku/puzzledigit.h"
@@ -84,6 +86,32 @@ TEST_F(PuzzleDigitTest, AssignmentOperatorOutOfRange)
     ASSERT_EQ(1, digit);
     
     ASSERT_THROW(digit = 100, PuzzleDigit::DigitOutOfRange);    
+}
+
+/* ************************************************************************* */
+
+TEST_F(PuzzleDigitTest, OutputBlank)
+{
+    std::stringstream stream;
+    
+    PuzzleDigit digit;
+    
+    stream << digit;
+    
+    ASSERT_STREQ(" ", stream.str().c_str());
+}
+
+/* ************************************************************************* */
+
+TEST_F(PuzzleDigitTest, OutputNonBlank)
+{
+    std::stringstream stream;
+    
+    PuzzleDigit digit(4);
+    
+    stream << digit;
+    
+    ASSERT_STREQ("4", stream.str().c_str());
 }
 
 /* ************************************************************************* */

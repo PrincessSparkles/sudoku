@@ -8,6 +8,8 @@
  
 /* ************************************************************************* */
 
+#include <fstream>
+
 #include "sudoku/puzzledigit.h"
 
 /* ************************************************************************* */
@@ -25,6 +27,23 @@ bool Sudoku::operator ==(const PuzzleDigitType &value, const PuzzleDigit &digit)
 bool Sudoku::operator ==(const PuzzleDigit &digit, const PuzzleDigitType &value)
 {
     return digit.get() == value;
+}
+
+/* ************************************************************************* */
+/* ************************************************************************* */
+
+std::ostream &Sudoku::operator <<(std::ostream &stream, const PuzzleDigit &digit)
+{
+    if (digit == 0)
+    {
+        stream << " ";
+    }
+    else
+    {
+        stream << digit.get();
+    }
+    
+    return stream;
 }
 
 /* ************************************************************************* */
