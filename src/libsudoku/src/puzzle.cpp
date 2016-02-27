@@ -36,7 +36,7 @@ std::string getHTMLHead()
 {
     std::string head =
         "<head>\n"
-        "    <title>Test file to draw a sudoku board</title>\n"
+        "    <title>Sudoku - (c) Richard Oak 2016</title>\n"
         "    <style>\n"
         "        table.sudoku {\n"
         "            border-collapse: collapse\n"    
@@ -117,7 +117,7 @@ std::string getHTMLBody(const Puzzle &puzzle)
             }
             
             // close quote and close tag
-            stream << "\">" << std::endl;
+            stream << "\">";
             
             stream << puzzle.Cell(x, y);
             
