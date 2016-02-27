@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <string>
+
 #include "twodarray.h"      // TwoDArray
 #include "puzzledigit.h"    // PuzzleDigit
 
@@ -56,6 +58,12 @@ public:
     /// </remarks>
     Puzzle() = default;
     ~Puzzle() = default;
+    
+    /// <summary>
+    /// Get a page of HTML that draws the Puzzle
+    /// </summary>
+    /// <returns>The HTML page</returns>
+    std::string getHTML() const;
 
 protected:
 
