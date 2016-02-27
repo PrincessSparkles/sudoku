@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include <cstdint>      // std::uint8_t
+#include <cstdint>      // std::uint16_t
 #include <exception>    // std::exception
 
 namespace Sudoku
@@ -18,7 +18,7 @@ namespace Sudoku
 
 /* ************************************************************************* */
 
-using PuzzleDigitType = uint8_t;
+using PuzzleDigitType = uint16_t;
 
 static const int MaxDigit = 9;
 
@@ -140,6 +140,25 @@ private:
 /// <param name="digit">digit to test</param>
 /// <returns>`value == digit._value`</returns>
 bool operator ==(const PuzzleDigitType &value, const PuzzleDigit &digit);
+
+/// <summary>
+/// Equality operator
+/// </summary>
+/// <param name="digit">digit to test</param>
+/// <param name="value">digit to test</param>
+/// <returns>`value == digit._value`</returns>
+bool operator ==(const PuzzleDigit &digit, const PuzzleDigitType &value);
+
+/* ************************************************************************* */
+
+/// <summary>
+/// Output digit to a stream
+/// </summary>
+/// <remarks>outputs a <space> for blank</remarks>
+/// <param name="os">stream to output to</param>
+/// <param name="digit>digit to output</param>
+/// <returns>reference to output stream</returns>
+std::ostream &operator <<(std::ostream &os, const PuzzleDigit &digit);
 
 /* ************************************************************************* */
 

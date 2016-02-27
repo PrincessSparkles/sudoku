@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <string>
+
 #include "twodarray.h"      // TwoDArray
 #include "puzzledigit.h"    // PuzzleDigit
 
@@ -44,7 +46,33 @@ static const int SubGridHeight = 3;
 /// <remarks>
 /// A Cell with a value of 0 is considered blank.
 /// </remarks>
-using Puzzle = TwoDArray<PuzzleDigit, PuzzleWidth, PuzzleHeight>;
+class Puzzle : public TwoDArray<PuzzleDigit, PuzzleWidth, PuzzleHeight>
+{
+public:
+
+    /// <summary>
+    /// constructor
+    /// </summary>
+    /// <remarks>
+    /// The Puzzle is initially set to blank
+    /// </remarks>
+    Puzzle() = default;
+    ~Puzzle() = default;
+    
+    /// <summary>
+    /// Get a page of HTML that draws the Puzzle
+    /// </summary>
+    /// <returns>The HTML page</returns>
+    std::string getHTML() const;
+
+protected:
+
+private:
+};
+
+/* ************************************************************************* */
+
+std::ostream &operator <<(std::ostream &os, const Puzzle &puzzle);
 
 /* ************************************************************************* */
 
