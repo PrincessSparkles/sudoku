@@ -154,9 +154,9 @@ bool operator ==(const PuzzleDigit &digit, const PuzzleDigitType &value);
 /// <summary>
 /// Output digit to a stream
 /// </summary>
-/// <remarks>outputs a <space> for blank</remarks>
+/// <remarks>outputs a <i>space</i> for blank</remarks>
 /// <param name="os">stream to output to</param>
-/// <param name="digit>digit to output</param>
+/// <param name="digit">digit to output</param>
 /// <returns>reference to output stream</returns>
 std::ostream &operator <<(std::ostream &os, const PuzzleDigit &digit);
 

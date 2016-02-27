@@ -17,6 +17,11 @@ namespace Sudoku
 
 /* ************************************************************************* */
 
+/// <summary>
+/// Solve the puzzle
+/// </summary>
+/// <param name="puzzle">The puzzle to solve</param>
+/// <returns>The solved puzzle</returns>
 Puzzle Solve(const Puzzle &puzzle);
 
 /* ************************************************************************* */

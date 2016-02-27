@@ -77,6 +77,7 @@ std::string getHTMLHead()
 /// <summary>
 /// Get the HTML BODY for the puzzle
 /// </summary>
+/// <param name="puzzle">The puzzle for which the HTML is being generated</param>
 /// <returns>HTML BODY tag, containing TABLE</returns>
 std::string getHTMLBody(const Puzzle &puzzle)
 {
