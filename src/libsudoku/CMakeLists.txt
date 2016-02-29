@@ -15,6 +15,7 @@ include(DoxygenTargets)
 include(CppcheckTargets)
 
 add_library(sudoku
+    src/solver/puzzlesolver.cpp
     src/puzzle.cpp
     src/puzzledigit.cpp
     src/sudoku.cpp)

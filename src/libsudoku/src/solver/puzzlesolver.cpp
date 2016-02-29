@@ -1,33 +1,30 @@
 /*
- * sudoku.cpp
+ * puzzlesolver.cpp
  *
- * This file contains the main interface to the Sudoku solver
+ * Class implementation for the Sudoku PuzzleSolver class
  *
- * (c) 2016 Richard Oak
+ * (c) Richard Oak 2016
  */
  
 /* ************************************************************************* */
 
-#include "sudoku/sudoku.h"
+#include "puzzlesolver.h"
 
-#include "solver/puzzlesolver.h"
+#include "sudoku/puzzle.h"
 
 /* ************************************************************************* */
 
-using Sudoku::Puzzle;
 using Sudoku::PuzzleSolver;
+using Sudoku::Puzzle;
 
 /* ************************************************************************* */
 /* ************************************************************************* */
 
-Puzzle Sudoku::Solve(const Puzzle &puzzle)
+Puzzle PuzzleSolver::Solve(const Puzzle &puzzle)
 {
-    PuzzleSolver solver;
-    
-    return solver.Solve(puzzle);
+    return puzzle;
 }
 
 /* ************************************************************************* */
 /* ************************************************************************* */
 /* ************************************************************************* */
- 
