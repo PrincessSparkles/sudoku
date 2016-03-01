@@ -15,6 +15,8 @@ include(DoxygenTargets)
 include(CppcheckTargets)
 
 add_library(sudoku
+    src/solver/puzzlesolver.cpp
+    src/solver/possiblesolution.cpp
     src/puzzle.cpp
     src/puzzledigit.cpp
     src/sudoku.cpp)
@@ -56,6 +58,7 @@ include_directories(src)
         
 # Every library has unit tests, of course
 add_executable(testlibsudoku
+    test/solver/possiblesolutiontest.cpp
     test/puzzletest.cpp
     test/puzzledigittest.cpp
     test/main.cpp)
