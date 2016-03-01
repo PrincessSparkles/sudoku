@@ -36,7 +36,18 @@ public:
     PossibleSolution();
     ~PossibleSolution() = default;
     
+    /// <summary>
+    /// Gets/Sets whether digit 'x' is a possibility for this cell
+    /// </summary>
+    /// <param name="digit">The digit that might be possible</param>
+    /// <returns>the possibility</returns>
     bool &IsPossible(const PuzzleDigitType &digit);
+
+    /// <summary>
+    /// Gets whether digit 'x' is a possibility for this cell
+    /// </summary>
+    /// <param name="digit">The digit that might be possible</param>
+    /// <returns>the possibility</returns>
     const bool &IsPossible(const PuzzleDigitType &digit) const;
 
     /// <summary>
@@ -68,6 +79,14 @@ protected:
 
 private:
 
+    /// <summary>
+    /// array holding the possibilities
+    /// </summary>
+    /// <remarks>
+    /// The array is indexed 0-MaxDigit, but we access it 1-MaxDigit+1. So we
+    /// use the IsPossible methods to access the array to ensure we always
+    /// use the right index
+    /// </remarks>
     std::array<bool, MaxDigit> _possible;  
 };
 
