@@ -107,5 +107,34 @@ TEST_F(SolverElemTest, const_IsPossible_MaxDigit_plus_one_throws)
 }
 
 /* ************************************************************************* */
+
+TEST_F(SolverElemTest, DefaultSolutionIsZero)
+{
+    SolverElem elem;
+    
+    ASSERT_EQ(0, elem.Solution());
+}
+
+/* ************************************************************************* */
+
+TEST_F(SolverElemTest, SetGetSolution)
+{
+    SolverElem elem;
+    
+    elem.Solution() = 2;
+    
+    ASSERT_EQ(2, elem.Solution());
+}
+
+/* ************************************************************************* */
+
+TEST_F(SolverElemTest, const_DefaultSolutionIsZero)
+{
+    const SolverElem elem;
+    
+    ASSERT_EQ(0, elem.Solution());
+}
+
+/* ************************************************************************* */
 /* ************************************************************************* */
 /* ************************************************************************* */

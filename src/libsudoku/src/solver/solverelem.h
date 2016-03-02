@@ -34,14 +34,38 @@ public:
     /// </summary>
     /// <param name="digit">The digit that might be possible</param>
     /// <returns>the possibility</returns>
-    bool &IsPossible(const PuzzleDigitType &digit);
+    bool &IsPossible(const PuzzleDigitType &digit)
+    {
+        return _possible.IsPossible(digit);
+    }
 
     /// <summary>
     /// Gets whether digit 'x' is a possibility for this cell
     /// </summary>
     /// <param name="digit">The digit that might be possible</param>
     /// <returns>the possibility</returns>
-    const bool &IsPossible(const PuzzleDigitType &digit) const;
+    const bool &IsPossible(const PuzzleDigitType &digit) const
+    {
+        return _possible.IsPossible(digit);
+    }
+    
+    /// <summary>
+    /// Get/Set the solution for this cell (zero if unsolved)
+    /// </summary>
+    /// <returns>The current solution</returns>
+    PuzzleDigit &Solution()
+    {
+        return _solution;
+    }
+    
+    /// <summary>
+    /// Get/Set the solution for this cell (zero if unsolved)
+    /// </summary>
+    /// <returns>The current solution</returns>
+    const PuzzleDigit &Solution() const
+    {
+        return _solution;
+    }
 
 protected:
 
@@ -52,6 +76,11 @@ private:
     /// </summary>
     PossibleSolution _possible;
 
+    /// <summary>
+    /// If non-zero, the value that has been determined for this element
+    /// Otherwise, this cell is as yet unsolved
+    /// </summary>
+    PuzzleDigit _solution;
 };
 
 /* ************************************************************************* */

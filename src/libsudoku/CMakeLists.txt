@@ -17,7 +17,6 @@ include(CppcheckTargets)
 add_library(sudoku
     src/solver/puzzlesolver.cpp
     src/solver/possiblesolution.cpp
-    src/solver/solverelem.cpp
     src/puzzle.cpp
     src/puzzledigit.cpp
     src/sudoku.cpp)
