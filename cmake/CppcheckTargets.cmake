@@ -176,6 +176,8 @@ function(add_cppcheck _name)
         list(APPEND _cppcheck_args "--suppress=missingIncludeSystem")
         list(APPEND _cppcheck_args "-I")
         list(APPEND _cppcheck_args "${CMAKE_CURRENT_SOURCE_DIR}/include")
+        list(APPEND _cppcheck_args "-I")
+        list(APPEND _cppcheck_args "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
         # include the main.cpp to prevent entry point functions being unused
         list(APPEND _files "${CMAKE_CURRENT_SOURCE_DIR}/../sudoku/src/main.cpp")
