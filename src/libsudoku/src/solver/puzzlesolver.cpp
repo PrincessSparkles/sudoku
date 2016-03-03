@@ -26,10 +26,17 @@ Sudoku::Puzzle PuzzleSolver::Solve(const Sudoku::Puzzle &puzzle)
 
 /* ************************************************************************* */
 
-
+Sudoku::SolverElem &PuzzleSolver::Cell(int x, int y)
+{
+    return _grid.Cell(x, y);
+}
 
 /* ************************************************************************* */
 
+const Sudoku::SolverElem &PuzzleSolver::Cell(int x, int y) const
+{
+    return _grid.Cell(x, y);
+}
 
 /* ************************************************************************* */
 /* ************************************************************************* */
