@@ -59,7 +59,7 @@ public:
     }
     
     /// <summary>
-    /// Get/Set the solution for this cell (zero if unsolved)
+    /// Get the solution for this cell (zero if unsolved)
     /// </summary>
     /// <returns>The current solution</returns>
     const PuzzleDigit &Solution() const
