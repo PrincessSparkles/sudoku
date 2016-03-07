@@ -59,6 +59,8 @@ include_directories(src)
 # Every library has unit tests, of course
 add_executable(testlibsudoku
     test/solver/possiblesolutiontest.cpp
+    test/solver/puzzlesolvertest.cpp
+    test/solver/solverelemtest.cpp
     test/puzzletest.cpp
     test/puzzledigittest.cpp
     test/main.cpp)

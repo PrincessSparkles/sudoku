@@ -12,6 +12,7 @@
 
 #include <cstdint>      // std::uint16_t
 #include <exception>    // std::exception
+#include <iosfwd>       // fwd decl std::ostream
 
 namespace Sudoku
 {

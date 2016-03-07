@@ -15,14 +15,27 @@
 /* ************************************************************************* */
 
 using Sudoku::PuzzleSolver;
-using Sudoku::Puzzle;
 
 /* ************************************************************************* */
 /* ************************************************************************* */
 
-Puzzle PuzzleSolver::Solve(const Puzzle &puzzle)
+Sudoku::Puzzle PuzzleSolver::Solve(const Sudoku::Puzzle &puzzle)
 {
     return puzzle;
+}
+
+/* ************************************************************************* */
+
+Sudoku::SolverElem &PuzzleSolver::Cell(int x, int y)
+{
+    return _grid.Cell(x, y);
+}
+
+/* ************************************************************************* */
+
+const Sudoku::SolverElem &PuzzleSolver::Cell(int x, int y) const
+{
+    return _grid.Cell(x, y);
 }
 
 /* ************************************************************************* */

@@ -8,8 +8,6 @@
  
 /* ************************************************************************* */
 
-#include <sstream>
-
 #include <gtest/gtest.h>
 
 #include "solver/possiblesolution.h"
