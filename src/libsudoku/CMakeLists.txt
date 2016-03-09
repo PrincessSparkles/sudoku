@@ -15,8 +15,15 @@ include(DoxygenTargets)
 include(CppcheckTargets)
 
 add_library(sudoku
+    src/iterator/columniterator.cpp
+    src/iterator/rowiterator.cpp
+    src/iterator/subgriditerator.cpp
+    src/iterator/zoneiterator.cpp
     src/solver/puzzlesolver.cpp
     src/solver/possiblesolution.cpp
+    src/zone/column.cpp
+    src/zone/row.cpp
+    src/zone/subgrid.cpp
     src/puzzle.cpp
     src/puzzledigit.cpp
     src/sudoku.cpp)
@@ -58,6 +65,9 @@ include_directories(src)
         
 # Every library has unit tests, of course
 add_executable(testlibsudoku
+    test/iterator/columniteratortest.cpp
+    test/iterator/rowiteratortest.cpp
+    test/iterator/subgriditeratortest.cpp
     test/solver/possiblesolutiontest.cpp
     test/solver/puzzlesolvertest.cpp
     test/solver/solverelemtest.cpp
