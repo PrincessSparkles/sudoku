@@ -65,7 +65,7 @@ TEST_P(RowIteratorTest, Iterator)
     	
 	Row row(solver, rowNum);
 	
-	for (auto e : row)
+	for (auto &e : row)
 	{
 		// do nothing
 	} 

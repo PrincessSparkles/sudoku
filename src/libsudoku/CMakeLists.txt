@@ -62,6 +62,7 @@ add_cppcheck(sudoku
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIR})
 include_directories(src)
+include_directories(test)
         
 # Every library has unit tests, of course
 add_executable(testlibsudoku
@@ -71,6 +72,7 @@ add_executable(testlibsudoku
     test/solver/possiblesolutiontest.cpp
     test/solver/puzzlesolvertest.cpp
     test/solver/solverelemtest.cpp
+    test/solver/zonecollectiontest.cpp
     test/puzzletest.cpp
     test/puzzledigittest.cpp
     test/main.cpp)

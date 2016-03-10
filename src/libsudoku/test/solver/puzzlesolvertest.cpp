@@ -91,7 +91,7 @@ TEST_F(PuzzleSolverTest, XIndexOutOfRange)
     typedef Sudoku::TwoDArray<Sudoku::SolverElem, Sudoku::PuzzleWidth, Sudoku::PuzzleHeight> SolverGrid;
     
     ASSERT_THROW(solver.Cell(9, 0).Solution() = 0, SolverGrid::IndexOutOfRange);
-    ASSERT_THROW(auto elem = solver.Cell(9, 0), SolverGrid::IndexOutOfRange);
+    ASSERT_THROW(auto &elem = solver.Cell(9, 0), SolverGrid::IndexOutOfRange);
 }
 
 /* ************************************************************************* */
@@ -106,7 +106,7 @@ TEST_F(PuzzleSolverTest, YIndexOutOfRange)
     typedef Sudoku::TwoDArray<Sudoku::SolverElem, Sudoku::PuzzleWidth, Sudoku::PuzzleHeight> SolverGrid;
     
     ASSERT_THROW(solver.Cell(1, 9).Solution() = 0, SolverGrid::IndexOutOfRange);
-    ASSERT_THROW(auto elem = solver.Cell(3, 19), SolverGrid::IndexOutOfRange);
+    ASSERT_THROW(auto &elem = solver.Cell(3, 19), SolverGrid::IndexOutOfRange);
 }
 
 /* ************************************************************************* */

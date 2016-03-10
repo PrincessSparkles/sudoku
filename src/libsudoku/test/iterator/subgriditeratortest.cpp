@@ -71,7 +71,7 @@ TEST_P(SubGridIndexIteratorTest, Iterator)
         
     SubGrid subgrid(solver, subgridNum);
     
-    for (auto e : subgrid)
+    for (auto &e : subgrid)
     {
         // do nothing
     } 
@@ -210,7 +210,7 @@ TEST_P(SubGridCoordIteratorTest, Iterator)
         
     SubGrid subgrid(solver, x, y);
     
-    for (auto e : subgrid)
+    for (auto &e : subgrid)
     {
         // do nothing
     } 

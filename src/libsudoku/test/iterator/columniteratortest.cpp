@@ -65,7 +65,7 @@ TEST_P(ColumnIteratorTest, Iterator)
             
     Column column(solver, colNum);
     
-    for (auto e : column)
+    for (auto &e : column)
     {
         // do nothing
     } 
