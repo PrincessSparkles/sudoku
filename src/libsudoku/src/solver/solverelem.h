@@ -13,6 +13,7 @@
 #include "sudoku/puzzledigit.h" // PuzzleDigitType
 
 #include "solver/possiblesolution.h"
+#include "solver/zonecollection.h"
 
 namespace Sudoku
 { 
@@ -28,6 +29,16 @@ public:
 
     SolverElem() = default;
     ~SolverElem() = default;
+    
+    /// <summary>
+    /// force the class to be non-copy constructable
+    /// </summary>
+    SolverElem(const SolverElem &) = delete;
+    
+    /// <summary>
+    /// Force the class to be non-copy assignable
+    /// </summary>
+    SolverElem &operator =(const SolverElem &) = delete;
     
     /// <summary>
     /// Gets/Sets whether digit 'x' is a possibility for this cell
@@ -66,6 +77,15 @@ public:
     {
         return _solution;
     }
+    
+    /// <summary>
+    /// Get the ZoneCollection
+    /// </summary>
+    /// <returns>The ZoneCollection</returns>
+    ZoneCollection &Zones()
+    {
+        return _zones;
+    }
 
 protected:
 
@@ -81,6 +101,11 @@ private:
     /// Otherwise, this cell is as yet unsolved
     /// </summary>
     PuzzleDigit _solution;
+    
+    /// <summary>
+    /// The zones that this cell is part of
+    /// </summary>
+    ZoneCollection  _zones;
 };
 
 /* ************************************************************************* */

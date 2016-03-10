@@ -33,7 +33,13 @@ class PuzzleSolver : public IPuzzleSolver
 {
 public:
     
-    PuzzleSolver() = default;
+    /// <summary>
+    /// Constructs the PuzzleSolver
+    /// </summary>
+    /// <remarks>
+    /// This method also assigns each cell in the solver its zones
+    /// </remarks>
+    PuzzleSolver();
     ~PuzzleSolver() = default;
     
     /// <summary>
