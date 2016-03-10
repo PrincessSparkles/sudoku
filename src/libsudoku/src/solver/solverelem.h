@@ -38,6 +38,7 @@ public:
     /// <summary>
     /// Force the class to be non-copy assignable
     /// </summary>
+    /// <returns>Nothing - this method is deleted</returns>
     SolverElem &operator =(const SolverElem &) = delete;
     
     /// <summary>
