@@ -18,7 +18,7 @@
 #include "zone/row.h"
 #include "zone/subgrid.h"
 
-#include "iterator/mockpuzzlesolver.h"
+#include "mockpuzzlesolver.h"
 
 /* ************************************************************************* */
 
