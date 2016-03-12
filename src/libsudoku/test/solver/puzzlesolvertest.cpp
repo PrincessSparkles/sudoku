@@ -49,6 +49,8 @@ TEST_F(PuzzleSolverTest, DefaultConstructor)
         for (auto x = 0; x < Sudoku::PuzzleHeight; x++)
         {
             ASSERT_EQ(0, solver.Cell(x, y).Solution());
+            // each cell has 3 zones: column, row, subgrid
+            ASSERT_EQ(3, solver.Cell(x, y).Zones().size()); 
             
             for (auto i = 1; i <= Sudoku::MaxDigit; i++)
             {
@@ -90,7 +92,6 @@ TEST_F(PuzzleSolverTest, XIndexOutOfRange)
     // arguments to the macro    
     typedef Sudoku::TwoDArray<Sudoku::SolverElem, Sudoku::PuzzleWidth, Sudoku::PuzzleHeight> SolverGrid;
     
-    ASSERT_THROW(solver.Cell(9, 0).Solution() = 0, SolverGrid::IndexOutOfRange);
     ASSERT_THROW(auto &elem = solver.Cell(9, 0), SolverGrid::IndexOutOfRange);
 }
 
@@ -105,7 +106,6 @@ TEST_F(PuzzleSolverTest, YIndexOutOfRange)
     // arguments to the macro    
     typedef Sudoku::TwoDArray<Sudoku::SolverElem, Sudoku::PuzzleWidth, Sudoku::PuzzleHeight> SolverGrid;
     
-    ASSERT_THROW(solver.Cell(1, 9).Solution() = 0, SolverGrid::IndexOutOfRange);
     ASSERT_THROW(auto &elem = solver.Cell(3, 19), SolverGrid::IndexOutOfRange);
 }
 

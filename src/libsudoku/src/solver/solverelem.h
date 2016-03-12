@@ -62,13 +62,16 @@ public:
     }
     
     /// <summary>
-    /// Get/Set the solution for this cell (zero if unsolved)
+    /// Set the solution for this cell
     /// </summary>
-    /// <returns>The current solution</returns>
-    PuzzleDigit &Solution()
-    {
-        return _solution;
-    }
+    /// <remarks>
+    /// This method also sets IsPossible equal to false for all entries
+    /// for this cell.
+    /// It also sets the IsPossible(solution) to false for each entry 
+    /// in each zone that this cell is part of 
+    /// </remarks>
+    /// <param name="solution">The solution to this cell</param>
+    void Solve(const PuzzleDigitType &solution);
     
     /// <summary>
     /// Get the solution for this cell (zero if unsolved)

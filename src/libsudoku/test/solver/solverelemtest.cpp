@@ -11,6 +11,9 @@
 #include <gtest/gtest.h>
 
 #include "solver/solverelem.h"
+#include "solver/puzzlesolver.h"
+
+#include "iterator/zoneiterator.h"
 
 /* ************************************************************************* */
 
@@ -116,23 +119,78 @@ TEST_F(SolverElemTest, DefaultSolutionIsZero)
 }
 
 /* ************************************************************************* */
+/* ************************************************************************* */
 
-TEST_F(SolverElemTest, SetGetSolution)
+class SolverElemSolveTest : public ::testing::TestWithParam<::testing::tuple<int, int, int>>
 {
-    SolverElem elem;
-    
-    elem.Solution() = 2;
-    
-    ASSERT_EQ(2, elem.Solution());
-}
+public:
+
+protected:
+
+private:
+};
+
+using ::testing::Combine;
+using ::testing::Range;
 
 /* ************************************************************************* */
 
-TEST_F(SolverElemTest, const_DefaultSolutionIsZero)
+INSTANTIATE_TEST_CASE_P(SolverElemTest,
+                        SolverElemSolveTest,
+                        Combine(Range(0, 9), Range(0, 9), Range(1,10)));
+                        
+/* ************************************************************************* */
+/* ************************************************************************* */
+
+TEST_P(SolverElemSolveTest, Solve)
 {
-    const SolverElem elem;
+    int x = ::testing::get<0>(GetParam());
+    int y = ::testing::get<1>(GetParam());
+    int solution = ::testing::get<2>(GetParam());
     
-    ASSERT_EQ(0, elem.Solution());
+    int top = (y / 3) * 3;
+    int left = (x / 3) * 3;
+    
+    Sudoku::PuzzleSolver solver;
+    
+    // solution is initially blank
+    ASSERT_EQ(0, solver.Cell(x, y).Solution());
+    
+    // IsPossible is true for all possible digits
+    for (auto i = 1; i <= Sudoku::MaxDigit; i++)
+    {
+        ASSERT_TRUE(solver.Cell(x, y).IsPossible(i));   
+    }
+    
+    // check the zones, to make sure that the solution could be put anywhere
+    for (auto &zone : solver.Cell(x, y).Zones())
+    {
+        for (auto &elem : *zone)
+        {
+            ASSERT_TRUE(elem.IsPossible(solution));
+        }
+    }
+        
+    // ** SOLVE THE CELL **
+    solver.Cell(x, y).Solve(solution);       
+
+    // the solution has been set
+    ASSERT_EQ(solution, solver.Cell(x, y).Solution());
+
+    // No digit is possible in the cell
+    for (auto i = 1; i <= Sudoku::MaxDigit; i++)
+    {
+        ASSERT_FALSE(solver.Cell(x, y).IsPossible(i));   
+    }    
+
+    // check the zones, to make sure that the solution can't be put anywhere
+    for (auto &zone : solver.Cell(x, y).Zones())
+    {
+        for (auto &elem : *zone)
+        {
+            ASSERT_FALSE(elem.IsPossible(solution));
+        }
+    }
 }
 
 /* ************************************************************************* */
