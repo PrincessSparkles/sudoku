@@ -71,7 +71,7 @@ public:
     /// in each zone that this cell is part of 
     /// </remarks>
     /// <param name="solution">The solution to this cell</param>
-    void Solve(const PuzzleDigitType &solution);
+    void Solve(const PuzzleDigit &solution);
     
     /// <summary>
     /// Get the solution for this cell (zero if unsolved)

@@ -172,7 +172,8 @@ TEST_P(SolverElemSolveTest, Solve)
     }
         
     // ** SOLVE THE CELL **
-    solver.Cell(x, y).Solve(solution);       
+    Sudoku::PuzzleDigit digit(solution);
+    solver.Cell(x, y).Solve(digit);       
 
     // the solution has been set
     ASSERT_EQ(solution, solver.Cell(x, y).Solution());

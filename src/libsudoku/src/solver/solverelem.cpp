@@ -19,7 +19,7 @@ using Sudoku::SolverElem;
 /* ************************************************************************* */
 /* ************************************************************************* */
 
-void SolverElem::Solve(const PuzzleDigitType &solution)
+void SolverElem::Solve(const PuzzleDigit &solution)
 {
     // first set the solution
     _solution = solution;
@@ -37,7 +37,7 @@ void SolverElem::Solve(const PuzzleDigitType &solution)
     {
         for (auto &elem : *zone)
         {
-            elem.IsPossible(solution) = false;
+            elem.IsPossible(solution.get()) = false;
         }
     }
 }
