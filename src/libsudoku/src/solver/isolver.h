@@ -34,7 +34,7 @@ public:
     /// <summary>
     /// virtual destructor
     /// </summary>
-    virtual ~ISolver();
+    virtual ~ISolver() = default;
     
     /// <summary>
     /// Find a solution for the cell
