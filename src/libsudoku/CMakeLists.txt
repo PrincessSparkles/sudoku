@@ -77,6 +77,7 @@ add_executable(testlibsudoku
     test/solver/puzzlesolvertest.cpp
     test/solver/solverelemtest.cpp
     test/solver/zonecollectiontest.cpp
+    test/solver/zonesolvertest.cpp
     test/puzzletest.cpp
     test/puzzledigittest.cpp
     test/main.cpp)
