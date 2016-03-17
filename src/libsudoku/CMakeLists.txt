@@ -19,8 +19,11 @@ add_library(sudoku
     src/iterator/rowiterator.cpp
     src/iterator/subgriditerator.cpp
     src/iterator/zoneiterator.cpp
+    src/solver/cellsolver.cpp
     src/solver/puzzlesolver.cpp
     src/solver/possiblesolution.cpp
+    src/solver/solverelem.cpp
+    src/solver/zonesolver.cpp
     src/zone/column.cpp
     src/zone/row.cpp
     src/zone/subgrid.cpp
@@ -69,10 +72,12 @@ add_executable(testlibsudoku
     test/iterator/columniteratortest.cpp
     test/iterator/rowiteratortest.cpp
     test/iterator/subgriditeratortest.cpp
+    test/solver/cellsolvertest.cpp
     test/solver/possiblesolutiontest.cpp
     test/solver/puzzlesolvertest.cpp
     test/solver/solverelemtest.cpp
     test/solver/zonecollectiontest.cpp
+    test/solver/zonesolvertest.cpp
     test/puzzletest.cpp
     test/puzzledigittest.cpp
     test/main.cpp)
