@@ -91,6 +91,15 @@ public:
         return _zones;
     }
 
+    /// <summary>
+    /// Get the ZoneCollection
+    /// </summary>
+    /// <returns>The ZoneCollection</returns>
+    const ZoneCollection &Zones() const
+    {
+        return _zones;
+    }
+
 protected:
 
 private:

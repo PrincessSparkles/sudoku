@@ -23,6 +23,7 @@ add_library(sudoku
     src/solver/puzzlesolver.cpp
     src/solver/possiblesolution.cpp
     src/solver/solverelem.cpp
+    src/solver/zonesolver.cpp
     src/zone/column.cpp
     src/zone/row.cpp
     src/zone/subgrid.cpp
